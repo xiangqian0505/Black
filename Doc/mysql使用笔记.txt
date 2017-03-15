@@ -1,0 +1,42 @@
+直接使用mysql登录
+vi /etc/my.cnf
+在mysqld下增加
+skip-grant-tables
+
+创建一个数据库
+CREATE DATABASE IF NOT EXISTS `ec` DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+查看用户权限
+show grants for kaifa@'%';
+给用户授权授权
+set old_passwords=0;
+grant all on ec.* to kaifa02@'%' identified by 'kf@xinfenbao.com';
+grant all privileges on *.* to root@'%' identified by password'123456';
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+取消给用户授权
+REVOKE all ON ec.* FROM kaifa02@'%';
+登录
+mysql -ukaifa01 -h 127.0.0.1  -p;
+110测试服务器登录直接使用mysql即可
+更改用户密码
+SET PASSWORD FOR kaifa02=PASSWORD('pwljY6Xcjs_201512');
+
+赋值数据库
+mysqldump xfbdb_new -u root -p1qaz2wsx --add-drop-table | mysql xfbdb_zx -u root -p1qaz2wsx;
+flush privileges;
+备份数据库
+mysqldump -u root -p1qaz2wsx xfbdb_new > /root/xfbdb_new.sql;
+mysqldump -u root -p1qaz2wsx xfbdb_zx > /root/xfbdb_zx.sql;
+
+mysqldump -uroot -pBmZxKky1xfb -h192.168.17.123 xfbdb_zx > /root/xfbdb_zx.sql;
+
+mysqldump -uroot -pUIzpeIRGem2015 -B xfbdb_zx>xfbdb_$(date +%F).sql
+
+mysqldump  -B xfbdb_zx>xfbdb_$(date +%F).sql
+显示所有用户权限
+select user,host from mysql.user;
+
+UIzpeIRGem2015
+
+
+mysqldump -u root -p123456 xfbdb_jy > /root/xfbdb_jy.sql;
+

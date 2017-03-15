@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Vendor: Pivotal Software, Inc.
+Implementation-Title: ActivitiDemo
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.anxpp
+Build-Jdk: 1.7.0_25
+Built-By: dev
+Created-By: Maven Integration for Eclipse
+Implementation-URL: http://projects.spring.io/spring-boot/ActivitiDemo
+ /
+
